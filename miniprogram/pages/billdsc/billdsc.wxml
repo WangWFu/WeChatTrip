@@ -1,0 +1,76 @@
+<!--miniprogram/pages/billdsc/billdsc.wxml-->
+<view class="header">
+  <view class="con">
+    <text>{{list.projectName}}</text>
+    <text>{{list.billNum}}</text>
+  </view>
+</view>
+<view class="list">
+  <view class="item">
+    <view class="left">记账日期</view>
+    <view class="right">{{list.newdate}}</view>
+  </view>
+  <view class="item">
+    <view class="left">名称</view>
+    <view class="right">{{list.projectName}}</view>
+  </view>
+  <view class="item">
+    <view class="left">备注</view>
+    <block wx:if="{{list.billname}}">
+    <view class="right">{{list.billname}}</view>
+    </block>
+    <block wx:else>
+    <view class="right">无</view>
+    </block>
+  </view>
+  <view class="item">
+    <view class="left">照片</view>
+    <block wx:if="{{list.imgSrc}}">
+    <view class="right">
+    <image src="{{list.imgSrc}}" class="imgSrc" bindtap="previewImage"></image>
+    </view>
+    </block>
+    <block wx:else>
+    <view class="right">无</view>
+    </block>
+  </view>
+</view>
+<view class="foot">
+  <view class="footitem">
+    <view class="nleft">创建人</view>
+    <view class="nright">{{buildname}}</view>
+  </view>
+  <view class="footitem">
+    <view class="nleft">创建事件</view>
+    <view class="nright">{{oddate}}</view>
+  </view>
+</view>
+
+<view class="footer">
+  <view class="del" bindtap="del">删除</view>
+  <view class="det" bindtap="det">编辑</view>
+</view>
+
+
+<block wx:if="{{show}}">
+  <view class="showcontent" bindtap="hidden">
+    <view class="show">
+      <view class="showitem" catchtap="in">
+        <input class="tnum" style='text-align:center' placeholder="0.00" maxlength="10" bindblur="getNum" bindinput="getNum" value="{{list.billNum}}"></input>
+         <view class="Remarks">
+          <text>项目:</text>
+          <input placeholder="名称" maxlength="10" bindblur="getTextName" bindinput="getTextName" value="{{list.projectName}}"></input>
+        </view>
+         <view class="Remarks">
+          <text>备注:</text>
+          <input placeholder="备注" maxlength="10" bindblur="getText" bindinput="getText" value="{{list.billname}}"></input>
+          <!-- <image src="../../images/photo.png" bindtap="addImg" class="addImg"></image> -->
+          <view >
+          <!-- <image src="{{imgSrc}}" class="choseimg" bindtap="previewImage"></image> -->
+          </view>
+        </view>
+        <button class="bnt1" size="default" bindtap="submit">保存</button>
+      </view>
+    </view>
+  </view>
+</block>

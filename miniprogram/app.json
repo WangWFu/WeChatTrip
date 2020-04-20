@@ -1,0 +1,86 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/Me/me",
+    "pages/Trip/trip",
+    "pages/Watch/watch",
+    "pages/index/Publish/publish",
+    "pages/Watch/publishwatch/publishwatch",
+    "pages/Billserver/billserve",
+    "pages/Pagedetail/pagedetail",
+    "pages/List/list",
+    "pages/List/addlist/addlist",
+    "pages/List/listdetail/listdetail",
+    "pages/watchdetail/watchdetail",
+    "pages/watchdetail/watchpublish/watchpublish",
+    "pages/search/search",
+    "pages/addbillserve/addbillserve",
+    "pages/billserverDetail/billserverDetail",
+    "pages/billdsc/billdsc",
+    "pages/billserverDetail/addbillitem/addbillitem",
+    "pages/sharelogin/sharelogin",
+    "pages/myzan/myzan",
+    "pages/Tool/tool",
+    "pages/mywatch/mywatch",
+    "pages/mybillgroup/mybillgroup",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#A2D89F",
+    "navigationBarTitleText": "云旅游",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#000",
+    "backgroundColor": "#A2D89F",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-sel.png"
+      },
+      {
+        "pagePath": "pages/Trip/trip",
+        "text": "行程",
+        "iconPath": "images/trip.png",
+        "selectedIconPath": "images/trip-sel.png"
+      },
+      {
+        "pagePath": "pages/Watch/watch",
+        "text": "看哪儿",
+        "iconPath": "images/watch.png",
+        "selectedIconPath": "images/watch-sel.png"
+      },
+      {
+        "pagePath": "pages/Tool/tool",
+        "text": "工具箱",
+        "iconPath": "images/box.png",
+        "selectedIconPath": "images/box-sel.png"
+      },
+      {
+        "pagePath": "pages/Me/me",
+        "text": "我的",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me-sel.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.2",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  }
+}

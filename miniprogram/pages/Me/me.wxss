@@ -1,0 +1,144 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+/* page{
+  background-color: #CCF0C5;
+  } */
+  /* 更改button样式 */
+  button[plain]{
+    border: 0;
+  }
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  z-index: -1;
+}
+
+.bg image {
+  width: 100%;
+  filter: blur(4px);
+  transform: scale(1.2)
+}
+/* money */
+.money{
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+  /* border: 1px solid #808080; */
+  border-radius: 10rpx;
+  width: 120rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 10rpx;
+  color: #000;
+  background: #ffd100
+}
+.money image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.active{
+  background: rgb(255, 255, 255,.7)
+}
+
+
+
+
+/* user */
+.user{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+  box-sizing: border-box;
+}
+.userinfo-avatar {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 200rpx;
+}
+.userinfo-nickname {
+  display: inline-block;
+  font-size: 16px;
+  /* padding: 30rpx 0; */
+}
+
+
+/* main */
+
+.main {
+  border: 1px solid #fff;
+  border-radius: 9px;
+  margin-top: 32px;
+  background: #fff;
+  padding: 10px;
+}
+
+/* nav */
+
+.nav {
+  border-bottom: 1px solid #eee;
+}
+
+.nav-item {
+  padding: 0 5px;
+  color: #808080;
+  font-size: 30rpx;
+}
+
+.nav-item-active {
+  border-bottom: 1px solid #ffd100;
+  color: #000;
+}
+/* 切换模块 */
+.item {
+  display: none;
+}
+
+.more-item {
+  position: relative;
+  display: flex;
+  margin: 20px 0 30px;
+  /* border-bottom: 1px solid #eee; */
+  text-align: center;
+}
+
+.more-item image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.more-item text {
+  font-size: 24rpx;
+  padding-left: 10rpx;
+  color: #000;
+}
+
+.more-item::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 9px;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid #CDC9C9;
+  border-top: 1px solid #CDC9C9;
+  transform: rotate(45deg);
+}
+
+
+.setting{
+  width: 60rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  
+  float: right;
+}
+
+.recm{
+  width: 200px;
+  margin: 50% auto;
+}

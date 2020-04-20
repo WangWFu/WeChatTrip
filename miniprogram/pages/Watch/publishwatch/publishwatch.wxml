@@ -1,0 +1,20 @@
+<!--miniprogram/pages/Watch/publishwatch/publishwatch.wxml-->
+<view class="main">
+  <view class="title">
+    <textarea placeholder="写下你想看的地点和描述" bindblur="getValue" bindinput="getValue" value=""></textarea>
+  </view>
+  <view class="addr">
+    <image class="addr-img" src="../../../images/addr.png" mode="widthFix"></image>
+    <text wx:if="{{islocation}}" class="text" bindtap="getLocation">{{address}}</text>
+    <text wx:else class="text" bindtap="getLocation">{{location.name}}</text>
+  </view>
+  <view class="count">
+    <text>赏金数</text>
+    <view class="count-num">
+      <button size="mini" bindtap="del">-</button>
+      <button size="mini" disabled='true'>{{num}}</button>
+      <button size="mini" bindtap="add">+</button>
+    </view>
+  </view>
+  <button type="primary" bindtap="submit">发布</button>
+</view>

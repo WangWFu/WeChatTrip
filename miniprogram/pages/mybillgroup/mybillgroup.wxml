@@ -1,0 +1,10 @@
+<!--miniprogram/pages/mybillgroup/mybillgroup.wxml-->
+<block wx:if="{{list.length===0}}">
+<view class="recom">{{tig}}</view>
+</block>
+<view class="car" wx:else>
+  <view class="item" wx:for="{{list}}" wx:key="index" bindtap="goTodetail" data-id="{{item._id}}" data-oddate="{{item.date}}">
+    <text class="groupName">{{item.groupName}}</text>
+    <text class="date">{{item.date}}</text>
+  </view>
+</view>

@@ -1,0 +1,93 @@
+/* miniprogram/pages/Pagedetail/pagedetail.wxss */
+/* miniprogram/components/detail/detail.wxss */
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+page{
+  background: #fff;
+}
+/* 轮播图 */
+.img{
+  width: 100%;
+}
+/* 标题 */
+.title{
+  margin: 30rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+/* nav */
+.nav{
+  margin-left: 220rpx;
+}
+.nav-img{
+  width: 45rpx;
+  height: 45rpx;
+  vertical-align: bottom;
+  margin-right: 10rpx;
+}
+.nav text{
+  font-size: 27rpx;
+   padding-right: 128rpx;
+}
+.line{
+  border-bottom: 1px solid #eee
+}
+
+
+/* user */
+.user{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin:20rpx  0 20rpx 20rpx; 
+  font-size: 12px;
+}
+.userinfo-avatar{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+}
+.date{
+  position: absolute;
+  top: 9rpx;
+  right: 20rpx;
+  /* display: inline-block; */
+  font-size: 12px;
+}
+
+/* 内容 */
+.article{
+  font-size: 14px;
+  line-height: 1.5;
+}
+.main{
+  border-bottom: 20rpx solid #efefef
+}
+
+
+ .commend{
+  margin: 30rpx 0 0 30rpx;
+  /* border-bottom: 1px solid #eee */
+}
+/* .comend-mine input{
+  display: inline-block;
+  height: 50rpx;
+  width: 600rpx;
+ background: #efefef;
+ border-radius: 11px;
+ padding-left:15rpx; 
+}  */
+
+/*
+.content{
+  margin:10rpx 0 0 50rpx; 
+  border-bottom: 1px solid #eee;
+}
+.main-content{
+  margin-top: 8rpx;
+} */
+button:not([size='mini']){
+  min-height:0;
+  width: 120rpx;
+}

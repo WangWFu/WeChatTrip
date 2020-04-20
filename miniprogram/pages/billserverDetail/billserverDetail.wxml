@@ -1,0 +1,51 @@
+<!--miniprogram/pages/billserverDetail/billserverDetail.wxml-->
+<view class="wrap">
+  <view class="nav">
+    <view data-index="1" class="nav-item {{index==1?'nav-item-active':''}}" bindtap="navchange">
+      <text data-index="1" bindtap="navchange">账单</text>
+    </view>
+    <view data-index="2" class="nav-item {{index==2?'nav-item-active':''}}" bindtap="navchangeTo">
+      <text data-index="2" bindtap="navchangeTo">成员</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="bill {{index==1?'':'item'}}">
+  <view class="car" wx:for="{{list}}" wx:key="index">
+    <!-- <scroll-view scroll-y="true" style="height:300px"> -->
+    <view data-id="{{item._id}}" data-oddate="{{item.date}}" bindtap="Todeail">
+      <text class="billname">{{item.projectName}}</text>
+      <text class="billNum">{{item.billNum}}元</text>
+      <view class="nickname">
+        <text>{{item.nickName}}</text>
+      </view>
+      <text class="tag">{{item.newdate}}</text>
+    </view>
+
+    <!-- </scroll-view> -->
+  </view>
+  <button class="btn" bindtap="inAdd">记一笔</button>
+</view>
+
+
+
+
+
+
+<view class=" {{index==2?'':'item'}}">
+  <block wx:if="{{group.length==0}}">
+    <view class="msg">你还没有添加成员~</view>
+  </block>
+  <block wx:else>
+    <view class="useinfo" wx:for="{{group}}" wx:key="index">
+      <image src="{{item.avatarUrl}}" mode="widthFix"></image>
+      <text>{{item.nickName}}</text>
+    </view>
+  </block>
+
+  <view class="group">
+    <image src="../../images/publish.png"></image>
+    <button open-type="share" class="btn2"></button>
+  </view>
+</view>

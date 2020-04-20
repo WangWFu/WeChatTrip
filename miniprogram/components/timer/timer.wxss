@@ -1,0 +1,21 @@
+picker {
+  display: inline-block;
+  margin: 0 0 0 10rpx;
+}
+
+.pick-view {
+  position: relative;
+  font-size: 24rpx;
+  margin: 50rpx 10rpx;
+}
+.picker::after {
+  content: '';
+  position: absolute;
+  top: 6rpx;
+  left: 247rpx;
+  width: 12rpx;
+  height: 12rpx;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  transform: rotate(45deg);
+}

@@ -1,0 +1,61 @@
+<!--miniprogram/pages/index/Publish/publish.wxml-->
+<view class="text-title">
+  <input placeholder="取个小标题吧~" value="" bindblur="getTextTitle"></input>
+</view>
+
+<view>
+  <textarea name="text" class="textarea" placeholder="分享你的心情和故事吧 ~" value="" bindblur="getText" maxlength="500"></textarea>
+</view>
+
+<!-- <view class="sel-img" bindtap="addDres">
+     
+    <block wx:for="{{imgSrc}}" wx:key="index">
+      <image class="listimg" src="{{item}}" wx:if="{{isimage}}" bindtap="previewImage" data-index="{{item}}"></image>
+       <image src="../../../images/close.png" class="delimg" data-index="{{item}}" bindtap="delImg"></image>
+    </block>
+    <image class="img" src="../../../images/up.png" bindtap="chooseImg" mode="widthFix"></image>
+  </view> -->
+
+<!-- 图片 -->
+<view class="images_box">
+  <block wx:key="imgbox" wx:for="{{imgSrc}}">
+    <view class='img-box'>
+      <image class='img' src='{{item}}' bindtap="previewImage" data-index="{{item}}"></image>
+      <view class='img-delect' data-deindex='{{index}}' bindtap='imgDelete1'>
+        <!-- <image class='img' src='../../../images/close.png'></image>    -->
+        <icon type="clear" class='img'></icon>
+      </view>
+    </view>
+  </block>
+  <view class='img-box' bindtap='addPic1' wx:if="{{imgSrc.length<9}}">
+    <image class='img' src='../../../images/up.png'></image>
+  </view>
+</view>
+
+<view class="addr">
+  <image class="addr-img" src="../../../images/addr.png" mode="widthFix"></image>
+  <text wx:if="{{islocation}}" class="text" bindtap="getLocation">{{address}}</text>
+  <text wx:else class="text" bindtap="getLocation">{{location.name}}</text>
+</view>
+
+<view class="tag">
+  <text class="tag-text">添加标签</text>
+  <view class="tag-item {{tag_active?'tag-active':''}}" bindtap="tagActive" data-text="{{text}}">
+    {{tag}}
+  </view>
+</view>
+
+<view class="pick-view">
+  <text>拍摄于</text>
+  <picker name="picker" mode="date" value="{{date}}" start="1999-09-01" end="2050-09-01" bindchange="bindDateChange">
+    <text class="picker">{{date}}</text>
+  </picker>
+</view>
+
+<radio-group class="radio-group" bindchange="radioChange">
+  <radio class="radio" wx:for-items="{{settings}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+    <text>{{item.name}}</text>
+  </radio>
+</radio-group>
+<button bindtap="publish">发布</button>
+<!-- <button open-type="openSetting" bindopensetting="callback">打开设置页</button> -->

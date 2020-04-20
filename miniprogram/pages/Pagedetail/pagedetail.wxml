@@ -1,0 +1,106 @@
+<!--miniprogram/pages/Pagedetail/pagedetail.wxml-->
+<!--miniprogram/components/detail/detail.wxml-->
+<!-- 轮播图 -->
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{imglist}}" wx:key="index">
+    <image src="{{item}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+
+
+
+
+<view class="title">
+  <text>{{textlist.textTitle}}</text>
+</view>
+<!-- nav部分 -->
+<view class="nav">
+  <!-- <image src="{{zanActive==false?'../../images/zan.png':'../../images/zan-sel.png'}}" class="nav-img" catchtap="zanChange"></image> -->
+  <image wx:if="{{zanActive==false}}" src="../../images/zan.png" class="nav-img" catchtap="addzan"></image>
+  <image wx:if="{{zanActive==true}}" src="../../images/zan-sel.png" class="nav-img" catchtap="delzan"></image>
+  <text>{{zannum > 0?zannum:0}}</text>
+  <!-- <image src="{{loveActive==false?'../../images/love.png':'../../images/love-sel.png'}}" class="nav-img" catchtap="loveChange"></image> -->
+  <image wx:if="{{loveActive==false}}" src="../../images/yibi.png" class="nav-img" bindtap="addmoney"></image>
+  <image wx:if="{{loveActive==true}}" src="../../images/yibi-sel.png" class="nav-img" bindtap="addmoney"></image>
+  <text>{{lovenum> 0?lovenum:0}}</text>
+  <!-- <image src="{{collectionActive==false?'../../images/collection.png':'../../images/collection-sel.png'}}" class="nav-img" catchtap="collectionChange"></image> -->
+  <image wx:if="{{collectionActive==false}}" src="../../images/collection.png" class="nav-img" catchtap="addcollection"></image>
+  <image wx:if="{{collectionActive==true}}" src="../../images/collection-sel.png" class="nav-img" catchtap="delcollection"></image>
+  <text>{{collectionnum> 0?collectionnum:0}}</text>
+</view>
+<view class="line"></view>
+<!--  结束-->
+<!-- user -->
+<view class="user">
+  <image class="userinfo-avatar" src="{{textlist.avatarUrl}}" background-size="cover"></image>
+  <text class="userinfo-nickname">{{textlist.nickName}}</text>
+  <view class="date">
+    <text>{{textlist.date}}</text>
+  </view>
+</view>
+<!-- 结束 -->
+<!-- 内容 -->
+<view class="main">
+  <text class="article">{{textlist.text}}</text>
+</view>
+<!-- 结束 -->
+
+<view class="commend-list">
+  <view class="commend">
+    <text class="commend-head">评论</text>
+    <!-- <text class="commend-num">(1122)</text> -->
+  </view>
+
+  <!-- 评论 -->
+  <block wx:if="{{commentlist.length===0}}">
+    <view>还没有评论~</view>
+  </block>
+  <block wx:else>
+    <view class="cu-list menu-avatar comment solids-top">
+      <block wx:for="{{commentlist}}" wx:key="index">
+        <view class="cu-item">
+          <view class="cu-avatar round" style="background-image:url({{item.comment_user_avatar}});"></view>
+          <view class="content">
+            <view class="text-grey">{{item.comment_user_name}}</view>
+            <view class="text-gray text-content text-df" bindtap="replyComment" data-name="{{item.comment_user_name}}" data-cid="{{item._id}}" data-type="1">
+              {{item.comment_text}}
+            </view>
+            <block wx:for="{{item.replaylist}}" wx:key="index">
+              <view class="bg-grey text-sm padding-as">
+                <view class="flex" bindtap="replyComment" data-name="{{item.comment_user_name}}" data-type="2" data-cid="{{item.parent_id}}">
+                  <view wx:if="{{item.type==='1'}}">{{item.comment_user_name}}:</view>
+                  <block wx:else>
+                    {{item.comment_user_name}} 回复 {{item.reply_name}}：
+                  </block>
+                  <view class="flex-sub">{{item.replay_text}}</view>
+                </view>
+              </view>
+            </block>
+
+            <view class="margin-top-sm flex justify-between">
+              <view class="text-gray text-df">{{item.comment_time}}</view>
+              <!-- <view>
+              <text class="cuIcon-appreciatefill text-red"></text>
+              <text class="cuIcon-messagefill text-gray margin-left-sm"></text>
+            </view> -->
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+
+  <!-- 评论 -->
+</view>
+
+<view class="cu-bar foot input">
+  <view class="cu-avatar round" style="background-image:url({{comment_user_avatar}});"></view>
+  <!-- <view class='action'>
+      <text class='icon-roundaddfill text-grey'></text>
+    </view> -->
+  <input class='solid-bottom' value="{{comment_text}}" placeholder='{{placeholder}}' maxlength="300" cursor-spacing="10" focus="{{focus}}" bindblur="onReplyBlur" bindinput='getCommentText'></input>
+  <!-- <view class='action'>
+      <text class='icon-emojifill text-grey'></text>
+    </view> -->
+  <button class='cu-btn bg-green shadow-blur' bindtap='sendComment'>发送</button>
+</view>

@@ -1,0 +1,96 @@
+<!--miniprogram/pages/Me/me.wxml-->
+<!-- <import src="../../components/mine/mine.wxml" /> -->
+<view class="header">
+  <view class="bg">
+    <!-- <image src="http://www.ppt123.net/beijing/UploadFiles_8374/201405/2014052209010276.jpg" mode="widthFix"></image> -->
+    <image src="{{avatarUrl}}" mode="widthFix"></image>
+  </view>
+  <view class="userinfo">
+    <view class="money {{isactive?'active':''}}" bindtap="Toaddmoney">
+      <image src="../../images/jinbi.png"></image>
+      <text>{{moneyNum}}</text>
+    </view>
+    <view class="user">
+      <image class="userinfo-avatar" src="{{islogin?avatarUrl:'../../images/user.png'}}" background-size="cover"></image>
+      <block wx:if="{{islogin}}">
+       <text class="userinfo-nickname">{{nickName}}</text>
+      </block>
+      <block wx:else>
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" plain="true"
+      style="width:210rpx;padding:0">{{logname}}</button>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="main">
+  <view class="nav">
+    <text data-index="1" class="nav-item {{index==1?'nav-item-active':''}}" bindtap="navchange">动态</text>
+    <text data-index="2" class="nav-item {{index==2?'nav-item-active':''}}" bindtap="navchangeTo">更多</text>
+  </view>
+
+  <view class="{{index==1?'':'item'}}">
+    <block wx:if="{{list.length===0}}">
+    <view class="recm">
+      <text>你还未发布游记，快去发布吧~</text>
+    </view>
+    </block>
+    <block wx:else>
+    <block wx:for="{{list}}" wx:for-item="item" wx:key='index'>
+      <view class="setting" bindtap="showModal" data-id="{{item._id}}" data-target="ChooseModal" data-index="{{index}}">.....</view>
+      <view class="cu-timeline" data-id='{{item._id}}' catchtap="goToDetial" bindlongpress="longDel">
+        <view class="cu-time">{{item.date}}</view>
+        <view class="cu-item">
+          <view class="content">
+            <text>{{item.textTitle}}</text>
+            <image src="{{item.imgUrl[0]}}"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+    </block>
+    
+
+  </view>
+  <view class="{{index==2?'':'item'}}">
+    <view class="more">
+      <view class="more-item" catchtap="goWatch">
+        <image src="../../images/money.png"></image>
+        <text>我的悬赏</text>
+      </view>
+      <view class="more-item" catchtap="goList">
+        <image src="../../images/list.png"></image>
+        <text>我加入的账本</text>
+      </view>
+      <view class="more-item" catchtap="goCollection">
+        <image src="../../images/book-mark.png"></image>
+        <text>我的收藏</text>
+      </view>
+      <view class="more-item" catchtap="goZan">
+        <image src="../../images/zan-sel.png"></image>
+        <text>我的赞</text>
+      </view>
+      <view class="more-item" catchtap="goAbout">
+        <image src="../../images/about.png"></image>
+        <text>使用说明</text>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 底部弹出框 -->
+  <view class="cu-modal bottom-modal {{modalName=='ChooseModal'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <view class="cu-bar bg-white">
+        <view class="action text-blue" bindtap="hideModal">取消</view>
+        <view class="action text-green" bindtap="upModal">确定</view>
+      </view>
+      <view class="cu-list menu text-left">
+        <view class="cu-item" wx:for="{{checkbox}}" wx:key="index">
+          <view class="flex justify-around align-center flex-sub">
+            <button class="cu-btn orange lg block {{item.checked?'bg-orange':'line-orange'}}" bindtap="ChooseCheckbox"  data-value="{{item.value}}"> {{item.name}}</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>

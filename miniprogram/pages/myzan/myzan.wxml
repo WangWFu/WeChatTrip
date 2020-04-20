@@ -1,0 +1,5 @@
+<!--miniprogram/pages/myzan/myzan.wxml-->
+<view class="box" wx:for="{{List}}" data-id="{{item._id}}" catchtap="goTodetail" wx:key="index">
+  <image class="img" src="{{item.imgUrl[0]}}"></image>
+  <text class="text">{{item.text}}</text>
+</view>

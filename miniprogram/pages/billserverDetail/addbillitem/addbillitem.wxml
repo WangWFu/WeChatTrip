@@ -1,0 +1,20 @@
+<!--miniprogram/pages/billserverDetail/addbillitem/addbillitem.wxml-->
+
+      <view class="showitem">
+        <input class="tnum" style='text-align:center' placeholder="0.00" maxlength="10" bindinput="getNum"></input>
+         <view class="Remarks">
+          <text>项目:</text>
+          <input placeholder="名称" maxlength="10"  bindinput="getTextName"></input>
+        </view>
+         <view class="Remarks">
+          <text>备注:</text>
+          <input placeholder="备注" maxlength="10"  bindinput="getText"></input>
+          <image src="../../../images/photo.png" bindtap="addImg" class="addImg"></image>
+          <view >
+          <image src="{{imgSrc}}" class="choseimg" bindtap="previewImage"></image>
+          </view>
+        </view>
+        <button class="bnt1" size="default" catchtap="submit">完成添加</button>
+      </view>
+  
+

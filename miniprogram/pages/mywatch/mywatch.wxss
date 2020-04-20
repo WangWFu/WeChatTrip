@@ -1,0 +1,2 @@
+/* miniprogram/pages/mywatch/mywatch.wxss */
+@import '../Watch/watch.wxss'

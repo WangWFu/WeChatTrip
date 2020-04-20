@@ -1,0 +1,62 @@
+<view class="header">
+  <text>行程</text>
+  <image src="../../images/publish-sel.png" catchtap="add"></image>
+</view>
+
+<text class="title">未完成</text>
+ <view class="content" wx:if="{{unFinishlist.length===0}}">{{tig}}</view>
+  <block wx:else>
+    <view class="content" wx:for="{{unFinishlist}}"  wx:key>
+    <view class="con" bindlongpress="conDel" data-id="{{item._id}}" data-index="{{index}}" data-selid='{{item.id}}'>
+        <text class="con-title">{{item.text}}</text>
+        <text>{{item.date}} 之前</text>
+        <view class="click {{isActive?'conActive':''}}" catchtap="complete" data-id="{{item._id}}"></view>
+      </view>
+    </view>
+  </block>
+<text class="title-end">已完成</text>
+  <view class="content" wx:if="{{Finishlist.length===0}}">{{tigend}}</view>
+    <block wx:else>
+    <view class="content" wx:for="{{Finishlist}}" wx:key>
+      <view class="con" bindlongpress="conDel" data-id="{{item._id}}">
+        <text class="con-title">{{item.text}}</text>
+        <text>{{item.date}}</text>
+        <view class="click conActive"></view>
+      </view>
+    </view>
+    </block>
+
+
+
+<block wx:if="{{show}}">
+<view class="showcontent" bindtap="hidden">
+  <view class="show">
+  <view class="showitem" catchtap="in">
+        <!-- <view class="item">
+          <image src="../../images/taideng.png"></image>
+          <input placeholder="请输入主题" placeholder-style="color:#A7A7A7;font-size:30rpx" class="art" value="" bindblur="getTestTitle"></input>
+        </view> -->
+        <view class="item">
+          <image src="../../images/time.png"></image>
+            <picker name="picker" mode="date" value="{{date}}" start="1999-09-01" end="2050-09-01"  
+                    bindchange="bindDateChange">
+                  <text class="art">{{date}}</text>
+            </picker>
+          <!-- <text class="art">请选择完成日期</text> -->
+        </view>
+        <view class="item">
+          <image src="../../images/bi.png"></image>
+          <textarea placeholder="请输入行程描述" placeholder-style="color:#A7A7A7;font-size:30rpx" class="textarea" value="" 
+                   bindblur="getTest" bindinput="getTest"></textarea>
+        </view>
+        <button size="default" bindtap="endAdd">完成添加</button>
+  </view>
+  </view> 
+</view>
+</block>
+
+  <view class="inbottom">
+      <text>tips:</text>
+      <text>1、长按可以删除创建的行程</text>  
+      <text>2、点击行程后的小方框，可以选择</text>
+  </view> 

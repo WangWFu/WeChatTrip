@@ -1,0 +1,195 @@
+/* miniprogram/pages/index/Publish/publish.wxss */
+
+/* 标题 */
+.text-title{
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+}
+
+
+/* 文本 */
+
+.textarea {
+  width: 100%;
+  font-size: 12px;
+  margin-top: 10rpx;
+}
+
+/* 图片 */
+/* 
+.img {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 10rpx 30rpx;
+}
+
+.sel-img {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listimg {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 5px;
+  margin: 10rpx 0 0 30rpx;
+}
+.delimg{
+  position: absolute;
+  top: 0rpx;
+  right: -20rpx;
+  width: 20rpx;
+  height: 20rpx;
+
+} */
+
+/* 图片 */
+.images_box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 50rpx;
+}
+.img-box{
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 35rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+/* 删除图片 */
+.img-delect{
+  /* width:25rpx;
+  height:25rpx; */
+  position:absolute;
+  right:-19rpx;
+  top:-23rpx;
+}
+.img{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+
+
+/* 地址 */
+
+.addr {
+  position: relative;
+  display: flex;
+  margin: 30rpx 0;
+}
+
+.addr-img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.text {
+  display: inline-block;
+  width: 100%;
+  font-size: 24rpx;
+}
+
+.addr::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 9px;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  transform: rotate(45deg);
+}
+
+/* 标签 */
+.tag{
+ font-size: 24rpx;
+}
+.tag-text {
+  margin: 0 0 0 10rpx;
+}
+
+/* .tag-item text {
+  display: inline-block;
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  font-size: 24rpx;
+  margin: 0 20rpx;
+} */
+.tag-item{
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin: 20rpx 0 10rpx 20rpx;
+  text-align: center;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+
+.tag-active {
+  background: #ffd100;
+}
+
+/* 时间选择器 */
+
+picker {
+  display: inline-block;
+  margin: 0 0 0 10rpx;
+}
+
+.pick-view {
+  position: relative;
+  font-size: 24rpx;
+  margin: 50rpx 10rpx;
+}
+
+.picker::after {
+  content: '';
+  position: absolute;
+  top: 6rpx;
+  left: 225rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  transform: rotate(45deg);
+
+}
+/* .setting{
+  width: 80rpx;
+  position: relative;
+  font-size: 24rpx;
+  border: 1px solid #eee;
+  border-radius: 8rpx;
+  padding: 0 10rpx;
+  margin: 0 20rpx;
+}
+.setting::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 70rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  transform: rotate(45deg);
+} */
+
+button{
+  margin-top: 30rpx;
+  background: #FFDD81;
+   box-shadow: 2px 6px 20px #FFDD81;
+}

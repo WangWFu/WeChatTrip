@@ -1,0 +1,98 @@
+/* miniprogram/pages/Watch/watch.wxss */
+/* page{
+  background: #eee;
+} */
+page{
+  background-color: #CCF0C5;
+  }
+/* 搜索栏 */
+.search{
+  box-sizing: border-box;
+  height: 80rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  margin: 5px 10px;
+  box-shadow: 0px 2px 2px 3px rgba(83, 79, 79, 0.1);
+  padding: 10rpx 0;
+}
+.search-text{
+  display: inline-block;
+  font-size: 25rpx;
+}
+/* 卡片 */
+.carlist{
+  height: 100%;
+  background: #fff;
+  margin: 50rpx 20rpx;
+  border-radius: 5px;
+}
+.dateTime{
+ display: flex;
+ align-items: center;
+}
+
+.img{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  margin: 15rpx 0 15rpx 15rpx;
+}
+.name{
+  font-size: 24rpx;
+  padding-left: 10rpx;
+}
+
+.maincon{
+  display: block;
+  display: -webkit-box;
+   overflow: hidden; /*隐藏溢出的文本  */
+  text-overflow: ellipsis;
+  word-break: break-all;/*自动换行*/
+  -moz-box-orient: vertical; /*从上到下自动排列子元素*/
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp:2; /*显示的行数*/
+  font-size: 30rpx;
+  padding-left: 7rpx;
+}
+
+.addr text{
+  color: #969696;
+  font-size: 12px;
+  padding-left: 4rpx;
+}
+.price text{
+  color: #969696;
+  font-size: 12px;
+  padding-left: 4rpx;
+}
+
+/* 发布按钮 */
+/* .publish{
+  position: relative;
+ 
+} */
+.bottom{
+  position: fixed;
+  bottom: 20rpx;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto 0;
+  width: 300rpx;
+  height: 60rpx;
+  background: #FED46E;
+  border: 1px solid #FED46E;
+  text-align: center;
+  border-radius: 4px;
+  z-index: 100;
+}
+.text-publish{
+  color: #A9A9A9;
+}
+/* .icon-publish{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 20rpx;
+  right: 6rpx;
+} */

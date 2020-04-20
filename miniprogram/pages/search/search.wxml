@@ -1,0 +1,48 @@
+<!--miniprogram/pages/search/search.wxml-->
+ <!-- 搜索框 -->
+  <view class="search">
+    <!-- <image class="search-icon" src="../../images/search.png"></image> -->
+    <icon type="search" size="26" color="#666666"></icon>
+    <input type="text" class="search-text" placeholder="请输入关键字搜索" bindinput="getValue"></input>
+  </view>
+
+
+<view class="content" wx:for="{{list}}" wx:key>
+  <view class="images">
+    <image src="{{item.imgUrl[0]}}" class="img" mode="scaleToFill" catchtap="goToDetial" data-id='{{item._id}}'></image>
+  </view>
+  <view class="address">
+    <image class="addr-img" src="../../images/addr.png" mode="widthFix"></image>
+    <text class="addr">{{item.location}}</text>
+  </view>
+  <view class="text " catchtap="goToDetial" data-id='{{item._id}}'>
+    <text>{{item.textTitle}}</text>
+  </view>
+  <view class="user">
+    <image class="userimg" src="{{item.avatarUrl}}"></image>
+    <text class="name">{{item.nickName}}</text>
+  </view>
+</view>
+
+
+
+<view class="main">
+  <view class="carlist" wx:for="{{watchlist}}" wx:key='index' data-id="{{item._id}}" data-pubid="{{item._openid}}" bindtap="goTodetail">
+      <view class="dateTime">
+        <image class="carimg" src="{{item.avatarUrl}}"></image>
+        <text class="carname">{{item.nickName}}</text>
+      </view>
+    <view class="carcontent">
+        <text class="maincon">{{item.text}}</text>
+          <view class="caraddr">
+            <text>任务地址：</text>
+            <text>{{item.location}}</text>
+          </view>
+        <view class="price">
+          <text>问题：</text>  
+          <text>{{item.num}}赏金</text>    
+        </view>
+    </view>
+  </view>
+</view>
+

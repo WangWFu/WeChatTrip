@@ -1,0 +1,33 @@
+<!--miniprogram/pages/Watch/watch.wxml-->
+<view class="search">
+    <!-- <image class="search-icon" src="../../images/search.png"></image> -->
+    <icon type="search" size="26" color="#666666"></icon>
+    <input type="text" class="search-text" placeholder="想看哪" bindtap="search"></input>
+</view>
+
+<view class="main">
+  <view class="carlist" wx:for="{{watchlist}}" wx:key='index' data-id="{{item._id}}" data-pubid="{{item._openid}}" bindtap="goTodetail">
+      <view class="dateTime">
+        <image class="img" src="{{item.avatarUrl}}"></image>
+        <text class="name">{{item.nickName}}</text>
+      </view>
+    <view class="content">
+        <text class="maincon">{{item.text}}</text>
+          <view class="addr">
+            <text>任务地址：</text>
+            <text>{{item.location}}</text>
+          </view>
+        <view class="price">
+          <text>问题：</text>  
+          <text>{{item.num}}赏金</text>    
+        </view>
+    </view>
+  </view>
+</view>
+
+<view class="publish">
+  <!-- <image class="icon-publish" src="../../images/publish-sel.png" bindtap="goToPublish"></image> -->
+    <view class="bottom" bindtap="Topublish">
+      <text class="text-publish">我要发布悬赏</text>
+    </view>
+</view>

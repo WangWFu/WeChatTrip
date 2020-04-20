@@ -1,0 +1,58 @@
+/* miniprogram/pages/billserverDetail/addbillitem/addbillitem.wxss */
+
+
+/* 记账界面 */
+/* .showcontent{
+   position: absolute;
+   top: 0;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+}
+.show{
+  position: relative;
+  width: 700rpx;
+  height: 700rpx;
+  margin:40rpx 30rpx 30rpx;
+  border-radius: 8px;
+  background: #fff;
+} */
+/* .showitem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.tnum{
+  width: 500rpx;
+  margin: 0 auto;
+  padding-top: 50rpx;
+  border-bottom: 1px solid #000;
+}
+.Remarks{
+  display: flex;
+  margin: 40rpx 0 70rpx 90rpx;
+  flex-wrap: wrap;
+}
+.Remarks text{
+  vertical-align: bottom;
+}
+.Remarks input{
+  display: inline-block;
+  border-bottom: 1px solid #000;
+}
+.Remarks .addImg{
+  width: 65rpx;
+  height: 65rpx;
+  margin-left: 20rpx;
+}
+.choseimg{
+  width: 300rpx;
+  height: 170rpx;
+  margin:70rpx 0 0 140rpx;
+}
+
+.bnt1{
+  background: #FFDD81;
+   box-shadow: 2px 6px 20px #FFDD81;
+}

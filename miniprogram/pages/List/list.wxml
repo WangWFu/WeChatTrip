@@ -1,0 +1,14 @@
+<!--miniprogram/pages/List/list.wxml-->
+<!-- 根据城市名称查找数据库 -->
+<view class="remind">
+  <text>请点击底部的+添加行李清单</text>
+</view>
+<view class="main" wx:for="{{list}}" wx:key>
+ <view class="carlist"  data-id="{{item._id}}" catchtap="goListDetail" >
+      <image src="../../images/go.png"></image>
+      <view class="after">{{item.city}}</view>
+ </view>
+</view>
+<view class="footer">
+<image src="../../images/publish-sel.png" bindtap="goAdd"></image>
+</view>

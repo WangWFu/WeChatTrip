@@ -1,0 +1,4 @@
+<!--miniprogram/pages/List/listdetail/listdetail.wxml-->
+<view class="header">
+  <view wx:for="{{list}}" wx:key>{{item}}</view>
+</view>

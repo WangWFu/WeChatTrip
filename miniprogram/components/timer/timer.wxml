@@ -1,0 +1,24 @@
+<template name='data'>
+<view class="pick-view">
+  <text>行程日期</text>
+  <picker name="picker" mode="date" value="{{date}}" start="1999-09-01" end="2050-09-01" bindchange="bindDateChange">
+    <text class="picker">{{date}}</text>
+  </picker>
+</view>
+</template>
+<template name='time1'>
+<view class="pick-view">
+  <text>开始时间</text>
+  <picker name="picker1" mode="time" value="{{time1}}" start="00:00" end="24:00" bindchange="startTimeChange">
+    <text class="picker">{{time1}}</text>
+  </picker>
+</view>
+</template>
+<template name='time2'>
+<view class="pick-view">
+  <text>结束时间</text>
+  <picker name="picker2" mode="time" value="{{time2}}" start="00:00" end="24:00" bindchange="endTimeChange">
+    <text class="picker">{{time2}}</text>
+  </picker>
+</view>
+</template>

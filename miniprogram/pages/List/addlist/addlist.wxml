@@ -1,0 +1,51 @@
+<!--miniprogram/pages/List/addlist/addlist.wxml-->
+<view class="header">
+  <text>旅行城市</text>
+  <input placeholder="请输入城市名(必填项)" bindblur="getValue" bindinput="getValue"></input>
+</view>
+<view class="main">
+  <text>常用必备物品</text>
+  <view class="section">
+    <checkbox-group bindchange="checkboxChange">
+      <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
+        <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </checkbox-group>
+  </view>
+  <button bindtap="submitInfo">完成</button>
+  <view class="footer">
+    <image src="../../../images/publish-sel.png" catchtap="addList"></image>
+  </view>
+</view>
+
+<!-- <view class="list" style="height:{{open?600:0}}rpx">
+
+  <image src="../../../images/close.png" catchtap="close"></image>
+  <view class="line"></view>
+
+  <view class="expend">
+    <text>物品</text>
+    <input placeholder="物品" maxlength="10" placeholder-style="color:#fff" 
+        bindblur="blur" value='{{value}}' bindinput="bindKeyInput"></input>
+  </view>
+  <button catchtap="submit">完成</button>
+ 
+</view> -->
+
+<block wx:if="{{show}}">
+<view class="showcontent" bindtap="hidden">
+  <view class="show">
+    <view class="showitem" catchtap="in">
+  
+        <view class="Remarks">
+          <text>物品:</text>
+          <input placeholder="物品名称" maxlength="10"  bindblur="getText" bindinput="getText"></input>
+        </view>
+    
+      <button size="default" catchtap="submit">完成添加</button>
+      </view>
+  </view> 
+</view>
+
+
+</block>

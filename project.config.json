@@ -1,0 +1,257 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": true,
+		"scopeDataCheck": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"nodeModules": true
+	},
+	"appid": "wx9ff42dddf6423735",
+	"projectname": "%E4%BA%91%E6%97%85%E6%B8%B8",
+	"libVersion": "2.10.4",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/Trip/trip",
+					"pathName": "pages/Trip/trip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Trip/publishTrip/publishTrip",
+					"pathName": "pages/Trip/publishTrip/publishTrip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Watch/watch",
+					"pathName": "pages/Watch/watch",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Meeting/meeting",
+					"pathName": "pages/Meeting/meeting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Me/me",
+					"pathName": "pages/Me/me",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/Publish/publish",
+					"pathName": "pages/index/Publish/publish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "components/detail/detail",
+					"pathName": "components/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Watch/publishwatch/publishwatch",
+					"pathName": "pages/Watch/publishwatch/publishwatch",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Sign/sign",
+					"pathName": "pages/Sign/sign",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Billserver/billserve",
+					"pathName": "pages/Billserver/billserve",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/List/list",
+					"pathName": "pages/List/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/List/addlist/addlist",
+					"pathName": "pages/List/addlist/addlist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/List/listdetail/listdetail",
+					"pathName": "pages/List/listdetail/listdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Pagedetail/pagedetail",
+					"pathName": "pages/Pagedetail/pagedetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/watchdetail/watchdetail",
+					"pathName": "pages/watchdetail/watchdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/watchdetail/watchpublish/watchpublish",
+					"pathName": "pages/watchdetail/watchpublish/watchpublish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search/search",
+					"pathName": "pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addbillserve/addbillserve",
+					"pathName": "pages/addbillserve/addbillserve",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/billserverDetail/billserverDetail",
+					"pathName": "pages/billserverDetail/billserverDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/billdsc/billdsc",
+					"pathName": "pages/billdsc/billdsc",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/billserverDetail/addbillitem/addbillitem",
+					"pathName": "pages/billserverDetail/addbillitem/addbillitem",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/test/test",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/sharelogin/sharelogin",
+					"pathName": "pages/sharelogin/sharelogin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myzan/myzan",
+					"pathName": "pages/myzan/myzan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/Tool/tool",
+					"pathName": "pages/Tool/tool",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mybillgroup/mybillgroup",
+					"pathName": "pages/mybillgroup/mybillgroup",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/about/about",
+					"pathName": "pages/about/about",
+					"scene": null
+				}
+			]
+		}
+	}
+}

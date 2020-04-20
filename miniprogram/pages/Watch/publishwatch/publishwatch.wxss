@@ -1,0 +1,50 @@
+/* miniprogram/pages/Watch/publishwatch/publishwatch.wxss */
+page{
+  background-color: #CCF0C5;
+  }
+.title{
+  border-bottom: 5px solid #DCDCDC;
+}
+/* 地址 */
+
+.addr {
+  position: relative;
+  display: flex;
+  margin: 30rpx 0;
+}
+
+.addr-img {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.text {
+  display: inline-block;
+  width: 100%;
+  font-size: 24rpx;
+}
+
+.addr::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: 9px;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  transform: rotate(45deg);
+}
+
+/*  */
+.count{
+  border-top: 5px solid #DCDCDC;
+  margin: 30rpx 0;
+  padding: 30rpx 0;
+}
+.num{
+  display: inline-block;
+  height:40rpx;
+  line-height: 40rpx;
+  padding: 0 0 50rpx 0;
+}

@@ -1,0 +1,121 @@
+/* miniprogram/pages/Billserver/billserve.wxss */
+/* page{
+  background: #eee;
+} */
+/* 账本卡片 */
+.car{
+  height: 130rpx;
+  background-image:linear-gradient(to right, #457fca,#5691c8);
+  position: relative;
+  border-bottom: 1px solid #FF8C00;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px #B3D7EB;
+  margin: 20rpx 20rpx 0;
+  color: #fff;
+}
+.car text:first-child{
+  font-size: 24px;
+  display: inline-block;
+  margin: 30rpx 0 30rpx 10rpx;
+  color: red;
+}
+.car text:nth-child(2){
+  float: right;
+  margin: 10rpx;
+}
+.tag{
+  position: absolute;
+  top: 70rpx;
+  right: 0;
+  /* color: rgb(184, 180, 180); */
+  color: #fff
+}
+
+/* 记账界面 */
+/* .list{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+  background: rgba(211,211,211, 1);
+  transition: height 0.3s;
+  overflow: hidden;
+  z-index: 11;
+}
+.list image{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 10px;
+}
+.line{
+border-bottom: 1px solid
+}
+.expend{
+  border-bottom:1px solid;
+  padding: 30rpx 10rpx 30rpx
+}
+.Remarks{
+  padding: 30rpx 10rpx 90rpx
+}
+.list text{
+  float: left;
+  margin-right:10px; 
+}
+button{
+  background: rgb(248, 30, 2);
+  color: #fff;
+  border-radius: 24px;
+} */
+
+/* 添加 */
+.inAdd{
+  position: absolute;
+  right: 18rpx;
+  bottom: 160rpx;
+}
+.inAdd image{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+/* 记账界面 */
+.showcontent{
+   position: absolute;
+   top: 0;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   z-index: 9
+}
+.show{
+  position: relative;
+  width: 700rpx;
+  height: 700rpx;
+  margin:138rpx 30rpx 30rpx;
+  border-radius: 8px;
+  background: #fff;
+}
+.showitem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  width: 500rpx;
+  margin-left: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+.expend{
+  margin: 30rpx 0;
+}
+.Remarks{
+  margin-bottom: 60rpx;
+}
+button{
+  background: #FFDD81;
+   box-shadow: 2px 6px 20px #FFDD81;
+}

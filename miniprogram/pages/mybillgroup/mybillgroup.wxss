@@ -1,0 +1,10 @@
+/* miniprogram/pages/mybillgroup/mybillgroup.wxss */
+@import '../addbillserve/addbillserve.wxss';
+.recom{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  font-size: 15px;
+  text-align: center;
+}

@@ -1,0 +1,106 @@
+
+page{
+  background: #CCF0C5;
+}
+
+.item{
+  height: 120rpx;
+  background: #CCF0C5;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.groupName{
+  display: inline-block;
+  margin: 45rpx 0 30rpx 20rpx;
+  color: #000;
+  font-size: 30rpx;
+}
+.date{
+  /* float: right;
+  margin: 46rpx; */
+  position: absolute;
+  top: 60rpx;
+  right: 20rpx;
+}
+
+.add{
+  position: relative;
+  width: 700rpx;
+  height: 80rpx;
+  border: 1px dashed rgb(197, 193, 193);
+  border-radius: 4px;
+  margin:20rpx auto;
+  background-color: #FED46E;
+}
+.add::after{
+  content: "+";
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  width: 30rpx;
+  height: 30rpx;
+  color: rgb(197, 193, 193)
+}
+.tig{
+  color: rgb(153, 149, 149);
+  font-size: 28rpx;
+  text-align: center;
+}
+
+/* 记账界面 */
+.showcontent{
+   position: absolute;
+   top: 0;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   z-index: 9
+}
+.show{
+  position: relative;
+  width: 700rpx;
+  height: 700rpx;
+  margin:138rpx 30rpx 30rpx;
+  border-radius: 8px;
+  background: #fff;
+}
+.showitem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 600rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background: #eee;
+  margin: 50rpx auto 0 auto;
+}
+text {
+  font-size: 24rpx;
+  color: rgb(175, 173, 173);
+}
+.nav {
+  text-align: center;
+}
+button {
+  width: 500rpx;
+  height: 80rpx;
+  overflow: visible;
+  border-radius: 40rpx;
+  font-size: 38rpx;
+  line-height: 80rpx;
+  background: #ffd100;
+  color: #fff;
+  font-weight: bold;
+  margin-top:180rpx; 
+  padding: 0;
+}
+button:not([size='mini']){
+  width: 500rpx;
+  min-height: 0
+}
+button::after {
+  border: none;
+}

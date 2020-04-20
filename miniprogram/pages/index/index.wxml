@@ -1,0 +1,65 @@
+<view class="body">
+  <!-- 搜索框 -->
+  <view class="search">
+    <!-- <image class="search-icon" src="../../images/search.png"></image> -->
+    <icon type="search" size="26" color="#666666"></icon>
+    <input type="text" class="search-text" placeholder="请输入城市名搜索"  bindtap="go"></input>
+  </view>
+ 
+
+  <!--  -->
+  <!-- 内容主体 -->
+  <view class="main">
+    <view class="content">
+      <view class="left">
+        <block wx:for="{{imglist}}" wx:for-item="item" wx:if="{{index % 2 ==0}}" wx:key='index'>
+          <view class="img-item">
+            <image class="img-list" src="{{item.imgUrl[0]}}" mode="widthFix" catchtap="goToDetial" data-id='{{item._id}}'></image>
+            <text class="tag" wx:if="{{item.tagSel!=''}}">{{item.tagSel}}</text>
+            <view class="address">
+              <image class="addr-img" src="../../images/addr.png" mode="widthFix"></image>
+              <text class="addr">{{item.location}}</text>
+            </view>
+
+            <view class="text " catchtap="goToDetial" data-id='{{item._id}}'>
+              <text>{{item.textTitle}}</text>
+            </view>
+            <view class="user">
+              <image class="img" src="{{item.avatarUrl}}"></image>
+              <text class="name">{{item.nickName}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <view class="right">
+        <block wx:for="{{imglist}}" wx:for-item="item" wx:if="{{index % 2 !=0}}" wx:key='index'>
+          <view class="img-item">
+            <image class="img-list" src="{{item.imgUrl[0]}}" mode="widthFix" catchtap="goToDetial" data-id='{{item._id}}'></image>
+            <text class="tag" wx:if="{{item.tagSel!=''}}">{{item.tagSel}}</text>
+            <view class="address">
+              <image class="addr-img" src="../../images/addr.png" mode="widthFix"></image>
+              <text class="addr">{{item.location}}</text>
+            </view>
+            <view class="text" catchtap="goToDetial" data-id='{{item._id}}'>
+              <text>{{item.textTitle}}</text>
+            </view>
+
+            <view class="user">
+              <image class="img" src="{{item.avatarUrl}}"></image>
+              <text class="name">{{item.nickName}}</text>
+              <!-- <image class="love-icon" src="{{loveactive==false?'../../images/love.png':'../../images/love-sel.png'}}" bindtap="lovechange"></image>
+               <text class="love-num">{{lovenum}}</text> -->
+            </view>
+
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!--  -->
+</view>
+<!-- 发布按钮 -->
+<view class="publish">
+  <image class="icon-publish" src="../../images/publish-sel.png" bindtap="goToPublish"></image>
+</view>

@@ -1,0 +1,30 @@
+<!--miniprogram/pages/addbillserve/addbillserve.wxml-->
+<block wx:if="{{list.length===0}}"></block>
+<view class="car" wx:else>
+  <view class="item" wx:for="{{list}}" wx:key="index" bindtap="goTodetail" data-id="{{item._id}}" data-oddate="{{item.date}}">
+    <text class="groupName">{{item.groupName}}</text>
+    <text class="date">{{item.date}}</text>
+  </view>
+</view>
+
+
+<view class="bottom">
+  <view class="add" bindtap="add"></view>
+</view>
+<view class="tig">
+  <text>添加你的旅程账单吧~</text>
+</view>
+
+<block wx:if="{{show}}">
+  <view class="showcontent" bindtap="hidden">
+    <view class="show">
+      <view class="showitem" catchtap="in">
+        <view class="nav">
+          <input type='text' style='text-align:center' placeholder="请输入你的旅程" bindinput="getValue"></input>
+          <text>请控制在10个字符以内哦~</text>
+        </view>
+        <button bindtap="submit">确认添加</button>
+      </view>
+    </view>
+  </view>
+</block>

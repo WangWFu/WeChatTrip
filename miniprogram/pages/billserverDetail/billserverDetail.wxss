@@ -1,0 +1,176 @@
+/* miniprogram/pages/billserverDetail/billserverDetail.wxss */
+page{
+  background-color: #CCF0C5;
+}
+.wrap{
+  height: 80rpx;
+  background: #FED46E
+}
+.nav{
+  position: relative;
+  height: 50rpx;
+  width: 600rpx;
+  margin: 0 auto;
+  border: 1px solid rgb(224, 221, 221);
+  border-radius: 25rpx;
+  background: #fff;
+  box-shadow: 2px 2px 2px rgb(224, 221, 221);
+  top: 15rpx;
+}
+.nav-item{
+  display: inline-block;
+  width: 50%;
+  height: 50rpx;
+  text-align: center;
+}
+.nav-item:nth-child(1){
+border-radius: 25rpx 0 0 25rpx;
+}
+.nav-item:nth-child(2){
+border-radius:0 25rpx 25rpx 0 ;
+}
+.nav-item:nth-child(1):after{
+  content: '';
+  height: 50rpx;
+  position: absolute;
+  top: 0;
+  left: 299rpx;
+  border-right:1px solid; 
+}
+.nav-item-active{
+ background: #FED46E;
+}
+
+/* 账本卡片 */
+.bill{
+  margin-top: 20rpx;
+}
+.car{
+  height: 130rpx;
+  position: relative;
+  border-bottom: 1px solid #FF8C00;
+  background: #CCF0C5;
+}
+.car .billname{
+  font-size: 24px;
+  display: inline-block;
+  margin: 30rpx 0 30rpx 10rpx;
+}
+.car .billNum{
+  float: right;
+  margin: 25rpx;
+}
+.tag{
+  position: absolute;
+  top: 70rpx;
+  right: 0;
+  color: rgb(169, 168, 168)
+}
+.nickname{
+    display: inline-block;
+    width: 180rpx;
+    height: 35rpx;
+    line-height: 35rpx;
+    border:1px solid #FED46E;
+    border-radius: 35rpx;
+    margin-left: 20rpx;
+    text-align: center;
+    color: rgb(243, 64, 64);
+    font-size: 27rpx;
+     overflow: hidden;
+     vertical-align: middle;
+}
+.nickname text{
+  text-align: center;
+  display: -webkit-box;
+  overflow: hidden; /*隐藏溢出的文本  */
+  text-overflow: ellipsis;
+  word-break: break-all;/*自动换行*/
+}
+
+
+.btn {
+  /* position: fixed;
+  bottom: 30rpx;
+  left: 0;
+  right: 0;
+  z-index: 6; */
+  width: 700rpx;
+  height: 80rpx;
+  overflow: visible;
+  border-radius: 40rpx;
+  font-size: 38rpx;
+  line-height: 80rpx;
+  background: #FED46E;
+  color: #fff;
+  font-weight: bold;
+  padding: 0;
+  margin: 30rpx 0;
+}
+.btn:not([size='mini']){
+  width: 700rpx;
+  min-height: 0
+}
+.btn::after {
+  border: none;
+}
+/* 切换模块 */
+.item {
+  display: none;
+}
+
+
+
+
+/* 成员 */
+.group{
+  position: relative;
+}
+.msg{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top:300rpx; 
+font-size: 30rpx;
+color: rgb(141, 141, 141);
+}
+.useinfo{
+  display: flex;
+  background: #fff;
+  height: 70rpx;
+  /* justify-content: center; */
+align-items: center;
+  font-size: 24rpx;
+}
+.useinfo image{
+  width: 50rpx;
+  height: 50rpx;
+  border: 1px solid #eee;
+  border-radius: 50rpx;
+  margin: 10rpx 10rpx 10rpx 30rpx;
+}
+.group image{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 30rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.btn2{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 100rpx;
+  padding: 0;
+  position: fixed;
+  bottom: 30rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+}
+.btn2:not([size='mini']){
+  min-height: 0;
+  width: 100rpx;
+}

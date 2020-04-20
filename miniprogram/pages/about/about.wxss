@@ -1,0 +1,7 @@
+/* miniprogram/pages/about/about.wxss */
+page{
+  background-color:  #CCF0C5;
+}
+text{
+  display: block;
+}

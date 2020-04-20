@@ -1,0 +1,57 @@
+/* miniprogram/pages/List/list.wxss */
+page{
+  background-color: #CCF0C5;
+  }
+.remind{
+  position: absolute;
+ left: 50%;
+ top: 50%;
+ /* margin-top: -250rpx;
+ margin-left: -250rpx; */
+  width: 500rpx;
+  transform: translate(-50%, -50%);
+  color: rgb(141, 137, 137);
+}
+
+.carlist{
+  position: relative;
+  height: 160rpx;
+  /* background-image: linear-gradient(to right, #3494E6 , #EC6EAD); */
+  border-radius: 2px;
+  margin: 4rpx;
+  line-height: 160rpx;
+  padding-left: 10rpx;
+  color: #fff;
+  background-color: #FED46E;
+  /* box-sizing: border-box; */
+}
+
+.carlist image{
+  position: absolute;
+  top: 60rpx;
+  right: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+/* .carlist::after{
+  content: '';
+  position: absolute;
+  top: 75rpx;
+  right: 53rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-right: 2px solid #fff;
+  border-top: 2px solid #fff;
+  transform: rotate(45deg);
+}
+ */
+
+.footer image{
+  position: absolute;
+  bottom: 30rpx;
+  left:0;
+  right: 0;
+  margin: 0 auto;
+  width: 100rpx;
+  height: 100rpx;
+}

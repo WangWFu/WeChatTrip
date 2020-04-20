@@ -1,0 +1,20 @@
+<!--miniprogram/pages/mywatch/mywatch.wxml-->
+<view class="main">
+  <view class="carlist" wx:for="{{watchlist}}" wx:key='index' data-id="{{item._id}}" data-pubid="{{item._openid}}" bindtap="goTodetail">
+      <view class="dateTime">
+        <image class="img" src="{{item.avatarUrl}}"></image>
+        <text class="name">{{item.nickName}}</text>
+      </view>
+    <view class="content">
+        <text class="maincon">{{item.text}}</text>
+          <view class="addr">
+            <text>任务地址：</text>
+            <text>{{item.location}}</text>
+          </view>
+        <view class="price">
+          <text>问题：</text>  
+          <text>{{item.num}}赏金</text>    
+        </view>
+    </view>
+  </view>
+</view>

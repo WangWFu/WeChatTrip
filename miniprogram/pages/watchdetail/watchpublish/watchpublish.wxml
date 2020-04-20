@@ -1,0 +1,16 @@
+<!--miniprogram/pages/watchdetail/watchpublish/watchpublish.wxml-->
+<view class="img" >
+  <block wx:if="{{imgSrc.length===0}}">
+  <image src="../../../images/photo.png" mode="aspectFit" bindtap="getPhoto"></image>
+  </block>
+  <block wx:else>
+  <image src="{{imgSrc}}" mode="aspectFit" bindtap="getPhoto"></image>
+  </block>
+</view>
+
+<view class="main">
+<text>备注:</text>
+<textarea  bindinput="getText" focus="{{focus}}"></textarea>
+<!-- <input bindinput="getText"></input> -->
+<button bindtap="publish">提交</button>
+</view>

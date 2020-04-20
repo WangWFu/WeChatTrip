@@ -1,0 +1,92 @@
+/* miniprogram/pages/watchdetail/watchdetail.wxss */
+.main{
+  border-bottom: 1px solid #eee
+}
+
+.dateTime{
+ display: flex;
+ align-items: center;
+ border-bottom: 1px solid #eee
+}
+.getfag{
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  color: red
+}
+.img{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  margin: 15rpx 0 15rpx 15rpx;
+  vertical-align: middle;
+}
+.name{
+  font-size: 28rpx;
+  padding-left: 10rpx;
+}
+.detail text{
+  font-size: 30rpx;
+}
+.title{
+  margin: 20rpx 20rpx;
+}
+.text{
+margin: 20rpx 20rpx;
+}
+.mon{
+margin: 20rpx 20rpx;
+}
+
+
+.pub{
+  position: fixed;
+  bottom: 50rpx;
+  right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%; */
+  font-size: 25rpx;
+  z-index: 10;
+}
+.pub image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.help{
+  font-size: 24rpx;
+  color: rgb(145, 145, 145);
+  margin: 50rpx 40rpx;
+}
+
+.commend{
+  border-bottom: 1px solid #eee;
+}
+
+.dimg{
+  display: block;
+  width: 600rpx;
+  height: 300rpx;
+  margin:10rpx auto 0 auto; 
+}
+.timer{
+  font-size: 24rpx
+}
+button{
+  border: 0;
+  padding: 0;
+  border-radius: 30rpx;
+  
+  font-weight: normal;
+  font-size: 30rpx;
+}
+button:not([size='mini']){
+  width: 190rpx;
+  min-height: 20rpx;
+}
+.active{
+  background: pink;
+}

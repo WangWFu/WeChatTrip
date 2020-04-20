@@ -1,0 +1,29 @@
+<!--miniprogram/pages/Billserver/billserve.wxml-->
+<view wx:for="{{datalist}}" wx:key="index">
+  <view class="car">
+    <text>{{item.Num}}</text>
+    <text>{{item.date}}</text>
+    <text class="tag">{{item.text}}</text>
+  </view>
+</view>
+
+<block wx:if="{{show}}">
+  <view class="showcontent" bindtap="hidden">
+    <view class="show">
+      <view class="showitem" catchtap="in">
+        <view class="expend">
+          <text>支出:</text>
+          <input placeholder="支出" maxlength="5" placeholder-style="color:#fff" type="number" bindblur="getNum" bindinput="getNum"></input>
+        </view>
+        <view class="Remarks">
+          <text>备注:</text>
+          <input placeholder="备注" maxlength="10" placeholder-style="color:#fff" bindblur="getText" bindinput="getText"></input>
+        </view>
+        <button size="default" catchtap="submit">完成添加</button>
+      </view>
+    </view>
+  </view>
+</block>
+<view class="inAdd">
+  <image src="../../images/inAdd.png" bindtap="toInAdd"></image>
+</view>

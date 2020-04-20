@@ -1,0 +1,11 @@
+<!--miniprogram/pages/Tool/tool.wxml-->
+<view class="wrap">
+<view class="item" bindtap="goBillserve">
+<image class="img" src="../../images/tripmoney2.png" mode="widthFix"></image>
+<text>旅行记账</text>
+</view>
+<view class="item" bindtap="goList">
+<image class="img" src="../../images/triplist1.png" mode="widthFix"></image>
+<text>旅行清单</text>
+</view>
+</view>

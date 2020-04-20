@@ -1,0 +1,62 @@
+<!--miniprogram/pages/watchdetail/watchdetail.wxml-->
+<view class="main">
+  <view class="dateTime">
+    <image class="img" src="{{watchlist.avatarUrl}}"></image>
+    <text class="name">{{watchlist.nickName}}</text>
+  </view>
+  <view class="detail">
+    <view class="title">
+      <text>描述:{{watchlist.text}}</text>
+    </view>
+    <view class="text">
+      <text>地点:{{watchlist.location}}</text>
+    </view>
+    <view class="mon">
+      <text>赏金:{{watchlist.num}}</text>
+    </view>
+  </view>
+</view>
+<text>大家帮助</text>
+<block wx:if="{{getwatch.length!=0}}">
+<view class="commend">
+    <view class="left">
+      <view class="dateTime">
+        <image class="img" src="{{getwatch.avatarUrl}}"></image>
+        <text class="name">{{getwatch.nickName}}</text>
+        <text class="getfag">已采纳</text>
+      </view>
+      <image class="dimg" src="{{getwatch.imgUrl}}" bindtap="previewImage1" data-index="{{index}}"></image>
+      <text>{{getwatch.text}}</text>
+      <view class="timer">
+        <text>{{getwatch.date}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{commendlist.length===0}}">
+  <view class="help">还没有人帮助，快来帮助他吧~</view>
+</block>
+<block wx:else>
+  <view class="commend" wx:for="{{commendlist}}" wx:key="index">
+    <view class="left">
+      <view class="dateTime">
+        <image class="img" src="{{item.avatarUrl}}"></image>
+        <text class="name">{{item.nickName}}</text>
+      </view>
+      <image class="dimg" src="{{item.imgUrl}}" bindtap="previewImage" data-index="{{index}}"></image>
+      <text>{{item.text}}</text>
+      <view class="timer">
+        <text>{{item.date}}</text>
+      </view>
+    </view>
+   <block wx:if="{{isSimple}}">
+    <button size="default" bindtap="getInfo" class="{{item.isGet?'active':''}}" data-id="{{item._id}}" data-iid="{{index}}" disabled="{{disabled}}" data-openid="{{item._openid}}">采纳为最佳</button>
+   </block>
+  </view>
+</block>
+
+
+<view class="pub" bindtap="getPhoto">
+  <image src="../../images/photo.png"></image>
+  <text>我帮你拍</text>
+</view>
