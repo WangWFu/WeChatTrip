@@ -12,7 +12,8 @@ Page({
     text: '',
     date:'',
     list:[],
-    nickName:''
+    nickName:'',
+    _openid:''  //发布者的openid
   },
 
   add: function () {
@@ -61,12 +62,14 @@ Page({
   },
 // 去往详情页面
   goTodetail:function(e){
+    var that= this;
     var id = e.currentTarget.dataset.id;
-    var oddate = e.currentTarget.dataset.oddate
+    var oddate = e.currentTarget.dataset.oddate;
+    var Createopenid = that.data._openid
     console.log(oddate)
     console.log(id)
     wx.navigateTo({
-      url: '../billserverDetail/billserverDetail?id=' + id + "&oddate=" + oddate,
+      url: '../billserverDetail/billserverDetail?id=' + id + "&oddate=" + oddate + "&Createopenid=" +Createopenid+ '&key='+ "",
     })
   },
   /**
@@ -78,45 +81,74 @@ Page({
     that.setData({
       date: date.formatTime(new Date()),
     })
-    app.getopenid().then(function(res){
-      let id = res
-      db.collection('billgroup').where({
-        _openid: id
-      }).get({
-        success: function (res) {
-          console.log(res)
-          db.collection('sharegroup').where({
-            _openid:id
-          }).get({
-            success:function(res){
-              console.log(res);
-            }
-          })
+    //查询账单
+    wx.getStorage({
+      key: '_openid',
+      success:function(res){
+        that.setData({
+          _openid:res.data
+        })
+        db.collection('billgroup').where({
+          _openid: res.data
+        }).get({
+          success: function (res) {
+            console.log(res)
+            that.setData({
+              list: res.data
+            })
+          }
+        })
+      }
+    })
+    // app.getopenid().then(function(res){
+    //   let id = res
+    //   db.collection('billgroup').where({
+    //     _openid: id
+    //   }).get({
+    //     success: function (res) {
+    //       console.log(res)
+    //       db.collection('sharegroup').where({
+    //         _openid:id
+    //       }).get({
+    //         success:function(res){
+    //           console.log(res);
+    //         }
+    //       })
+    //       that.setData({
+    //         list: res.data
+    //       })
+    //     }
+    //   })
+    // })
+      // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+      wx.getUserInfo({
+        success: function(res) {
+          // console.log(res.userInfo)
           that.setData({
-            list: res.data
+            nickName: res.userInfo.nickName,
+            avatarUrl: res.userInfo.avatarUrl,
           })
         }
       })
-    })
      // 查看是否授权
-     wx.getSetting({
-      success (res){
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
-            success: function(res) {
-              console.log(res.userInfo)
-              that.setData({
-                nickName: res.userInfo.nickName,
-                avatarUrl: res.userInfo.avatarUrl,
-              })
-            }
-          })
-        }else{
+//      wx.getSetting({
+//       success (res){
+//         if (res.authSetting['scope.userInfo']) {
+//           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+//           wx.getUserInfo({
+//             success: function(res) {
+//               console.log(res.userInfo)
+//               that.setData({
+//                 nickName: res.userInfo.nickName,
+//                 avatarUrl: res.userInfo.avatarUrl,
+//               })
+//             }
+//           })
+//         }else{
 
-        }
-      }
-})
+//         }
+//       }
+// })
 // wx.cloud.callFunction({
 //   name:'getbillgroup',
 //   success:function(res){
@@ -144,18 +176,34 @@ Page({
    */
   onShow: function () {
     var that=this;
-    app.getopenid().then(function (res) {
-      db.collection('billgroup').where({
-        _openid: res
-      }).get({
-        success: function (res) {
-          console.log(res)
-          that.setData({
-            list: res.data
-          })
-        }
-      })
+    wx.getStorage({
+      key: '_openid',
+      success:function(res){
+        // console.log(res.data)
+        db.collection('billgroup').where({
+          _openid: res.data
+        }).get({
+          success: function (res) {
+            console.log(res)
+            that.setData({
+              list: res.data
+            })
+          }
+        })
+      }
     })
+    // app.getopenid().then(function (res) {
+    //   db.collection('billgroup').where({
+    //     _openid: res
+    //   }).get({
+    //     success: function (res) {
+    //       console.log(res)
+    //       that.setData({
+    //         list: res.data
+    //       })
+    //     }
+    //   })
+    // })
   },
 
   /**

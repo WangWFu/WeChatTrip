@@ -71,7 +71,27 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (ops) {
+    var that = this;
+    if (ops.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(ops.target)
+    }
+    return {
+      title: '快来和我一起记账！',
+      imageUrl: '', //图片地址
+      // path: 'pages/billserverDetail/billserverDetail?groupId='+that.data._id,// 用户点击首先进入的当前页面
+      // path: 'pages/billserverDetail/billserverDetail?scen=2&groupId=' + that.data._id + '&oddate=' + that.data.oddate,
+      // path: 'pages/billserverDetail/billserverDetail?groupId=' + that.data._id +'&key='+123
+      // + '&oddate=' + that.data.oddate,
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功:");
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败:");
+      }
+    }
   }
 })

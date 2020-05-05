@@ -6,11 +6,12 @@
 <text class="title">未完成</text>
  <view class="content" wx:if="{{unFinishlist.length===0}}">{{tig}}</view>
   <block wx:else>
-    <view class="content" wx:for="{{unFinishlist}}"  wx:key>
-    <view class="con" bindlongpress="conDel" data-id="{{item._id}}" data-index="{{index}}" data-selid='{{item.id}}'>
+    <view class="content" wx:for="{{unFinishlist}}"  wx:key="index">
+    <view class="con" bindlongpress="conDel" data-id="{{item._id}}" data-index="{{index}}" data-selid='{{item.id}}' catchtap="complete">
         <text class="con-title">{{item.text}}</text>
         <text>{{item.date}} 之前</text>
-        <view class="click {{isActive?'conActive':''}}" catchtap="complete" data-id="{{item._id}}"></view>
+        <view class="click " data-id="{{item._id}}"
+        data-index="{{index}}"></view>
       </view>
     </view>
   </block>
@@ -58,5 +59,5 @@
   <view class="inbottom">
       <text>tips:</text>
       <text>1、长按可以删除创建的行程</text>  
-      <text>2、点击行程后的小方框，可以选择</text>
+      <text>2、点击未完成的行程后可以选择</text>
   </view> 

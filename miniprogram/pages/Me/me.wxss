@@ -142,3 +142,8 @@
   width: 200px;
   margin: 50% auto;
 }
+
+.tripimg{
+  width: 320px;
+  height: 150px !important;
+}

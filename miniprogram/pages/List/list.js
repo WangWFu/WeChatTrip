@@ -51,7 +51,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+    app.getopenid().then(function(res){
+      db.collection('boxlist').where({
+        _openid:res
+      }).get({
+        success:function(res){
+          console.log(res)
+          that.setData({
+            list:res.data
+          })
+        }
+      })
+    })
   },
 
   /**

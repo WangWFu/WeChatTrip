@@ -79,7 +79,8 @@ Page({
       num:that.data.num,
       avatarUrl: that.data.avatarUrl,
       nickName: that.data.nickName,
-      isShow:false
+      isShow:false,
+      disable:false
     }
     db.collection('watchlist').add({
       data:formdata,

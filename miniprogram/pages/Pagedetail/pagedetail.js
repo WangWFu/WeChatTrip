@@ -11,7 +11,7 @@ Page({
   data: {
     cardCur: 0,
     _openid: '',
-
+    pubid:'',   //发布者的id
     imglist: [], //轮播图
     textlist: '', //内容
 
@@ -144,48 +144,75 @@ Page({
   addmoney() {
     var that = this;
     var delnum = that.data.moneyNum - 1;
-    wx.showModal({
-      title: '提示',
-      content: '给游记投上1金币嘛！',
-      success (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-          that.setData({
-            loveActive: true,
-          })
-          wx.cloud.callFunction({
-            name: 'updateTrip',
-            data: {
-              _id: that.data._id,
-              action: 'addmoney',
-            },
-            success: function (res) {
-              // console.log(res)
-              wx.setStorage({
-                key: that.data._id + '2',
-                data: {
-                  loveActive: true,
-                },
-              })
-              that.onShow()
-              db.collection('money').where({
-                _openid:that.data._openid
-              }).update({
-                data:{
-                  moneyNum:delnum
-                },
-                success:function(res){
-                  // console.log(res);
-                  
+    if(that.data._openid !== that.data.pubid){
+      wx.showModal({
+        title: '提示',
+        content: '给游记投上1金币嘛！',
+        success (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            that.setData({
+              loveActive: true,
+            })
+            db.collection('lovelist').where({
+              _openid: that.data._openid,
+              Pid: that.data._id
+            }).get({
+              success: function (res) {
+                // console.log(res.data)
+                let id = res.data.Pid;
+                if (id !== that.data._id) {
+                  db.collection('lovelist').add({
+                    data: {
+                      Pid: that.data._id,
+                      loveActive: true,
+                    },
+                    success: function (res) {
+                      // console.log(res)
+                    }
+                  })
                 }
-              })
-            }
-          })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
+              }
+            })
+            wx.cloud.callFunction({
+              name: 'updateTrip',
+              data: {
+                _id: that.data._id,
+                action: 'addmoney',
+              },
+              success: function (res) {
+                // console.log(res)
+                db.collection('money').where({
+                  _openid:that.data._openid
+                }).update({
+                  data:{
+                    moneyNum:delnum
+                  },
+                  success:function(res){
+                    // console.log(res);
+                  }
+                })
+              }
+            })
+            wx.setStorage({
+              key: that.data._id + '2',
+              data: {
+                loveActive: true,
+              },
+            })
+            that.onShow()
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
         }
-      }
-    })
+      })
+     }else{
+      wx.showToast({
+        title: '不能给自己投币！',
+        icon:'none',
+        duration: 2000
+      })      
+     }
   },
  
   // 收藏点击事件
@@ -550,6 +577,7 @@ if (that.data.type === '2') {
           zannum: res.data.zanNum,
           lovenum: res.data.loveNum, //爱心值
           collectionnum: res.data.collenNum,
+          pubid:res.data._openid
         })
       }
     })

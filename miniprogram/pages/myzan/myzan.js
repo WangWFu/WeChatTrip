@@ -9,7 +9,9 @@ Page({
   data: {
     _openid: '',
     List: [],
-    key:''
+    key:'',
+    zan:'',
+    collection:''
   },
   goTodetail(e) {
     let id = e.currentTarget.dataset.id;
@@ -86,9 +88,15 @@ Page({
  
     if(options.key==='zan'){
       that.getzan()
+      that.setData({
+        zan:true
+      })
     }
     else if(options.key==='collection'){
       that.getcollection()
+      that.setData({
+        collection:true
+      })
     }
   },
 

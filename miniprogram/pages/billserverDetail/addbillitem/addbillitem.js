@@ -175,24 +175,27 @@ Page({
         _id: options._id,
         oddate: options.oddate
       })
-    app.getopenid().then(function (res) {
-      wx.getStorage({
-        key: res,
-        success: function (res) {
+      wx.getUserInfo({
+        success: function(res) {
+          console.log(res.userInfo)
           that.setData({
-            nickName: res.data.userInfo.nickName
+            nickName: res.userInfo.nickName,
+            // avatarUrl: res.userInfo.avatarUrl,
           })
-        },
-        // fail:function(err){
-        //   wx.navigateTo({
-        //     url: '../login/login',
-        //   })
-        // }
+        }
       })
-      // that.setData({
-      //   _openid: res,
-      // })
-    })
+    // app.getopenid().then(function (res) {
+    //   wx.getStorage({
+    //     key: res,
+    //     success: function (res) {
+    //       that.setData({
+    //         nickName: res.data.userInfo.nickName
+    //       })
+    //     },
+       
+    //   })
+  
+    // })
   },
 
   /**

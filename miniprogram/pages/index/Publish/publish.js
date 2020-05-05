@@ -244,8 +244,9 @@ Page({
           zanNum: this.data.zanNum,
           loveNum: this.data.loveNum,
           collenNum: this.data.collenNum,
-          isShow:false,
-          key:this.data.key
+          isShow:false,   //审核通过
+          key:this.data.key,
+          disable:false   //审核未通过
         }
         
         db.collection('triplist').add({

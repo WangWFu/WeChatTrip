@@ -249,7 +249,26 @@
 					"id": -1,
 					"name": "pages/about/about",
 					"pathName": "pages/about/about",
+					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": 1007
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"scene": 1044,
+					"shareInfo": {
+						"groupName": "测试模拟群0",
+						"shareName": "rqDUuu0cJqKOj476pzIXbmjF-z6AxqPYORZigo22TnM@cr4dev",
+						"shareKey": "MPtfgPYRbuD6o1m-lWF_KKlwgkc7heUu0KyiEK5JONHASdGV3VMpp_0Y2nl-psknbmZcv3PkDSYoajtoJDaxag~~"
+					}
 				}
 			]
 		}

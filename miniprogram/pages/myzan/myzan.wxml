@@ -1,5 +1,10 @@
 <!--miniprogram/pages/myzan/myzan.wxml-->
+<block wx:if="{{List.length===0}}">
+ <text class="tig">空空如也！</text>
+</block>
+<block wx:else>
 <view class="box" wx:for="{{List}}" data-id="{{item._id}}" catchtap="goTodetail" wx:key="index">
   <image class="img" src="{{item.imgUrl[0]}}"></image>
   <text class="text">{{item.text}}</text>
 </view>
+</block>

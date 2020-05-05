@@ -90,7 +90,8 @@ Page({
   complete:function(event){
     var that=this;
     var id = event.currentTarget.dataset.id;
-    // console.log(id)
+    var index =event.currentTarget.dataset.index
+    console.log(index)
     wx.showModal({
       title: '提示',
       content: '行程已完成了吗！',

@@ -68,7 +68,8 @@ Page({
               avatarUrl: this.data.avatarUrl,
               isGet: false,
               id: this.data.id,
-              isShow:false
+              isShow:false,
+              disable:false
             },
             success:function(res){
               console.log(res)

@@ -11,7 +11,7 @@ cloud.init({
 })
 const db=cloud.database()
 const _ = db.command
-// 云函数入口函数
+// 云函数入口函数,悬赏的
 exports.main = async (event, context) => {
   var openid=event._openid
   try{

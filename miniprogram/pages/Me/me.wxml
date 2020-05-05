@@ -42,7 +42,7 @@
         <view class="cu-item">
           <view class="content">
             <text>{{item.textTitle}}</text>
-            <image src="{{item.imgUrl[0]}}"></image>
+            <image src="{{item.imgUrl[0]}}" mode="aspectFit" class="tripimg"></image>
           </view>
         </view>
       </view>

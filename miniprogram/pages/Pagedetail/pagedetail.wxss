@@ -89,5 +89,5 @@ page{
 } */
 button:not([size='mini']){
   min-height:0;
-  width: 120rpx;
+  width: 140rpx !important;
 }

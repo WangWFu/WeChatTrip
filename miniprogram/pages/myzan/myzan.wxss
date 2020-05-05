@@ -1,4 +1,7 @@
 /* miniprogram/pages/myzan/myzan.wxss */
+page{
+  background-color: #CCF0C5;
+  }
 .box{
   height: 400rpx;
   background: #eee;
@@ -7,6 +10,7 @@
   border-radius: 8rpx;
 }
 .img{
+  width: 100%;
   height: 300rpx;
 }
 .text{
@@ -20,4 +24,10 @@
   -webkit-line-clamp:2; /*显示的行数*/
 
   font-size: 32rpx;
+}
+.tig{
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
 }

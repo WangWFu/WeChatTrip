@@ -36,9 +36,12 @@ background-color: #CCF0C5;
   margin: 30rpx 0;
   text-align: center;
   font-size: 26rpx;
+  min-height: 100%;
+  padding-bottom: 5px;
 }
 .con{
   position: relative;
+ 
 }
 .con text{
   display: block;
@@ -115,9 +118,10 @@ button:not([size='mini']){
     width: 170px;
 }
 .inbottom{
-  position: fixed;
+  /* position: fixed;
   bottom: 200rpx;
-  z-index: -1;
+  z-index: -1; */
+  margin-top: -5px;
 }
 .inbottom text{
   display: block;

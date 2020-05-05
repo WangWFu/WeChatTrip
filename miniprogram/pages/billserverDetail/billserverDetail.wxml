@@ -25,7 +25,23 @@
 
     <!-- </scroll-view> -->
   </view>
-  <button class="btn" bindtap="inAdd">记一笔</button>
+  <block wx:if="{{scen==2 && islogin==false}}">
+  <!-- 好友进入但未授权 -->
+  <button class="btn" open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo"> 记一笔</button>
+  </block>
+  <block wx:elif="{{scen==2 && islogin==true}}">
+  <!-- 好友进入且已授权 -->
+    <button class="btn" bindtap="inAddA">记一笔</button>
+  </block>
+   <!-- <block wx:elif="{{scen==2 && islogin==true && already==true}}">
+
+    <button class="btn" bindtap="inAddB">记一笔3333</button>
+  </block> -->
+  <block wx:elif="{{scen==1 && islogin==''}}">
+  <!-- 本人进入 -->
+   <button class="btn" bindtap="inAdd">记一笔</button>
+  </block>
+   <!-- <button class="btn" bindtap="inAdd">记一笔</button> -->
 </view>
 
 

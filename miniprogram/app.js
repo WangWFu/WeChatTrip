@@ -32,6 +32,7 @@ App({
             data: res.result.openid,
             key: '_openid',
           })
+          console.log(res.result.openid)
           resolve(res.result.openid)
 
         },
